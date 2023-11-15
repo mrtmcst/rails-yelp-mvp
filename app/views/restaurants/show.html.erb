@@ -1,25 +1,26 @@
-  
-
-  <%= render @restaurant %>
+<br>
+<%= render @restaurant %>
   <p class="back-option">
-    <%= link_to '<< Back to restaurants', root_path %>
+    <%= link_to 'Back to restaurants', root_path, class: 'btn btn-primary', style: 'transition: background-color 0.3s ease' %>
   </p>
   <p class="write-review">
-    <%= link_to 'Write a review', new_restaurant_review_path(@restaurant) %>
+    <%= link_to 'Write a review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary', style: 'transition: background-color 0.3s ease' %>
   </p>
-  <br>
-  <p><strong>Reviews</strong></p>
-  <ul class="list-group">
-    <% @restaurant.reviews.each do |review| %>
-      <li class="list-group-item">
-        <div class="row">
+
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-6 text-start">
+          <%= "⭐️" * review.rating %>
+        </div>
+        <p>
           <div class="col-6 text-start">
             <%= review.content %>
           </div>
-          <div class="col-6 text-middle">
-            <%= review.rating %>
-          </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+        </p>
+      </div>
+    </li>
+  <% end %>
+</ul>

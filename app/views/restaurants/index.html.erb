@@ -1,5 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
+<br>
 <h1>Restaurants</h1>
 <br>
 <div id="restaurants">
@@ -7,7 +8,7 @@
   <div class="card">
     <div class="card-body">
       <%= render restaurant %>
-      <%= link_to 'Show this restaurant', restaurant, class: 'btn btn-primary' %>
+      <%= link_to 'Show this restaurant', restaurant, class: 'btn btn-primary', style: 'transition: background-color 0.3s ease' %>
     </div>
   </div>
   <% end %>
@@ -16,7 +17,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col-12 text-end">
-            <%= link_to 'Create new restaurant', new_restaurant_path, class: 'btn btn-primary' %>
+            <%= link_to 'Create new restaurant', new_restaurant_path, class: 'btn btn-primary', style: 'transition: background-color 0.3s ease'%>
           </div>
         </div>
       </div>
