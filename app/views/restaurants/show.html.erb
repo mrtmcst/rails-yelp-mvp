@@ -1,0 +1,25 @@
+  
+
+  <%= render @restaurant %>
+  <p class="back-option">
+    <%= link_to '<< Back to restaurants', root_path %>
+  </p>
+  <p class="write-review">
+    <%= link_to 'Write a review', new_restaurant_review_path(@restaurant) %>
+  </p>
+  <br>
+  <p><strong>Reviews</strong></p>
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-6 text-start">
+            <%= review.content %>
+          </div>
+          <div class="col-6 text-middle">
+            <%= review.rating %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
